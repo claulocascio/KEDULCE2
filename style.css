@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Alkalami&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Alkalami', serif;
+    text-decoration: none;
+}
+.header{
+    max-width: 1200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
+
+}
+
+.header_superior{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+    background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+}
+.logo img{
+    width: 200px;
+    height: 150px;
+}
+.search input{
+    width: 260px;
+    padding: 5px;
+    margin-right: 10px;
+}
+
+.boton{
+  margin-right: -20px;
+  padding: -5px;
+  display: block;
+  float: left;
+}
+
+.container_menu{
+    width: 100%;
+    height: 70px;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    padding: 0px 20px;
+    justify-content: center;
+    /* ADDED */
+    /* position: fixed; */
+
+}
+.menu{
+    max-width: 1200px;
+    margin: auto;
+    height: 100%;
+    font-size: 15px;
+    justify-content: center;
+
+}
+
+nav{
+    height: 100%;
+    font-size: 15px;
+
+}
+
+nav > ul{
+    height: 100%;
+    display: flex;
+}
+
+nav  ul  li{
+    height: 100%;
+    list-style: none;
+    position: relative;
+    color: gray;
+    text-decoration: none;
+}
+
+
+nav > ul > li:last-child > a{
+    background-image: url(/KEDULCE/imagenes/carrito-de-compras.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 40px;
+
+    
+    
+}
+
+nav > ul > li:last-child:hover > a{
+    background-image: url(/KEDULCE/imagenes/carrito-de-compras.png);
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 20px 40px;
+
+}
+
+nav > ul > li > a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: rgb(36, 34, 34);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 15px;
+    transition: all 300ms ease;
+    text-decoration: none;
+}
+
+nav > ul > li > a:hover{
+    transform: scale(1.1);
+    background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    color: grey;
+    text-decoration: none;
+
+}
+
+
+
+#selected{
+    transform: scale(1.1);
+    background-color: #d57eeb linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+nav ul li ul{
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background: #fcb69f;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 95px;
+    left: -5px;
+    padding: 14px 0px;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 10;
+    transition: all 300ms ease;
+    text-decoration: none;
+
+
+}
+
+nav ul li:hover ul{
+    visibility: visible;
+    opacity: 1;
+    top: 70px;
+    text-decoration: none;
+
+}
+nav ul li ul:before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #fcb69f;
+    position: absolute;
+    top: -12px;
+    left: 20px;
+}
+nav ul li ul li a{
+    display: block;
+    color: grey;
+    padding: 6px;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: all 300ms ease;
+    text-decoration: none;
+}
+
+nav ul li ul li a:hover{
+    background: #f5a48a;
+    color: grey;
+    transform: scale(1.1);
+    padding-left: 30px;
+    font-size: 14px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@1,600&display=swap');
+
+.slider{
+  width: 70%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.slider ul{
+  display: flex;
+  padding: 0;
+  width: 400%;
+  animation: cambio 20s infinite alternate;
+}
+
+.slider:nth-child(2) ul{
+  animation-timing-function: ease-in;
+}
+
+.slider li{
+  width: 100%;
+  list-style: none;
+}
+
+.slider img{
+  width: 100%;
+}
+
+@keyframes cambio{
+
+  0% {margin-left: 0%;}
+  20%{margin-left: 0%;}
+
+  25%{margin-left: -100%;}
+  45%{margin-left: -100%;}
+
+  50%{margin-left: -200%;}
+  70%{margin-left: -200%;}
+
+  75%{margin-left: -300%;}
+  100%{margin-left: -300%;}
+}
+
+body {font-family: Arial, Helvetica, sans-serif; text-align: center;}
+
+* {box-sizing: border-box;}
+
+input[type=text] [type=email] [type=tel], textarea {
+    width: 40%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-top: 1px;
+    margin-bottom: 1px;
+    resize: vertical;
+    }
+
+    .comment {
+        width: 50%;
+        height: 70px;
+        padding: 10px 20px;
+        background-color:#eacded;
+    }
+   
+input[type=submit] {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    color: rgb(46, 45, 45);
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+input[type=reset] {
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    color: rgb(46, 45, 45);
+    padding: 10px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+    .flex-container {
+        border-radius: 25px;
+        background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+        /* margin: 10px 300px; */
+        margin: 10px 10px;
+        padding: 5px;
+        box-shadow: 0px 5px 20px 0px rgba(1, 1, 1, 1);
+    }
+
+    input[type="text"]{
+        text-align: center;
+    }
+    input[type="email"]{
+        text-align: center;
+    }
+    input[type="tel"]{
+        text-align: center;
+    }
+
+    ::placeholder {
+        text-align: center;
+    }
+
+    #mensaje{
+        width: 30%;
+        background-color: #eacded;
+        color: rgb(27, 26, 27);
+        border-radius: 0.5rem;
+        box-shadow: 0.25rem 0.25rem .5 rgb(15, 15, 16);
+    } 
+
+/* Reaponsive iPhone */
+@media only screen and (max-width: 750px){
+
+  .logo img{
+    width: 100px;
+    height: 75px;
+}
+.search input{
+    width: 80px;
+    padding: 10px;
+    
+}
+
+.boton{
+  width: 50px;
+  padding: 5px;
+  
+}
+
+}
+
+
+
+@media only screen and (max-width: 750px){
+  article h1, h2{
+    
+    font-size: 15px;
+    
+    
+  }
+  
+  article h3{
+    
+    font-size: 15px;
+    
+   
+
+  }
+
+  .estilo-a .img-container img{
+    max-width: 600px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+      /* ADDED */
+      postion: fixed;
+    
+    
+  }
+
+  main{
+    
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    
+  }
+
+  .estilo-a .info-container h3, .estilo-a .info-container strong{
+    font-size: 15px;
+    align-items: center;
+    padding-left: 30px;
+  }
+  
+  .estilo-a .add-cart{
+    margin-top: 0px;
+    padding: 0px;
+    font-size: 10px;
+  }
+
+  .estilo-a{
+    padding: 20px;
+  }
+}
+
+@media only screen and (max-width: 750px){
+
+.menu{
+
+  width: 30%;
+  font-size: 5px;
+}
+
+.container_menu{
+  
+  font-size: 8px;
+}
+
+.redes{
+  font-size: 15px;
+}
+
+nav > ul > li > a{
+  font-size: 10px;
+}
+
+#selected{
+  transform: scale(0.6);
+  float: left;
+}
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/KEDULCE/imagenes/favicon-32x32.png">
+    <link rel="stylesheet" href="/KEDULCE/style.css">
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    <header>
+        <div class="header_superior">
+            <div class="logo">
+                <img src="/KEDULCE/imagenes/logo-1387282377-1605538220-585713de54f31e48c82b192d05bb0c7b1605538221-480-0.png" alt="">
+            </div>
+            <div class="search">
+                <input type="search" id="buscador" class="form-control" placeholder="¿Qué estás buscando hoy?">
+                <button class="btn-btn-info" id="boton">Buscar</button>
+                <ul id="resultado">
+
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="container_menu">
+            <nav>
+                <ul>
+                    <li><a href="/KEDULCE/index.html">Inicio</a></li>
+                    <li><a href="#">Productos</a>
+                        <ul>
+                            <li><a href="/KEDULCE/herramientas.html">Herramientas</a></li>
+                            <li><a href="/KEDULCE/insumos.html">Insumos</a></li>
+                            <li><a href="/KEDULCE/ideas.html">Algunas ideas...</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="#">Fechas especiales</a>
+                    <ul>
+                        <li><a href="/KEDULCE/diadelamadre.html">Día de la madre</a></li>
+                        <li><a href="/KEDULCE/halloween.html">Halloween</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="/KEDULCE/contacto.html">Contacto</a></li>
+                    <li><a href="#" id="selected"></a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <br>
+        <br>
+        <h1>Formulario de Contacto</h1>
+
+        <div class="flex-container">
+             
+            <form name="kedulce" action="https://formspree.io/f/xjvzodek" method="POST" onsubmit="return validacion();">
+        
+                <label for="nombre"><b>Nombre :</b></label><br>
+                <input type="text" size="30" id="nombre" name="nombre" placeholder="Ingresá tu Nombre"><label id="mensaje"></label><br><br>
+        
+                <label for="apellido"><b>Apellido :</b></label><br>
+                <input type="text" size=30 id="apellido" name="apellido" placeholder="Ingresá tu Apellido"><label id="mensaje"></label><br><br>
+        
+                <label for="email"><b>Correo electrónico :</b></label><br>
+                <input type="email" size=30 id="email" name="email" placeholder="Ingresá tu email"><label id="mensaje"></label><br><br>
+        
+                <label for="tel"><b>Teléfono de Contacto :</b></label><br>
+                <input type="tel" size=30 id="tel" name="tel" pattern="[0-9]{10}" placeholder="Ingresá tu teléfono"><label id="mensaje"></label><br><br>
+        
+                <label for="Motivo"><b>Motivo de Contacto :</b></label><br>
+                <select id="motivo" name="motivo">
+                <option value="selección">Seleccioná un motivo</option>
+                <option value="status pedido">Estado de mi pedido</option>
+                <option value="tiempo envío">Tiempo de envío</option>
+                <option value="asesoramiento">Asesoramiento sobre productos, precios, disponibilidad</option>
+                <option value="promos pagos">Promociones y Medios de Pago</option>
+                <option value="cambio entrega">Cambio del domicilio de entrega</option>
+                <option value="cambio producto">Cambio del producto elegido</option>
+                <option value="compra telefónica">Compra telefónica</option>
+                <option value="mayorista">Compra mayorista</option>
+                <option value="corporativa">Compra corporativa</option>
+                <option value="anular">Anular pedido / Me arrepentí</option>
+                <option value="otros">Otras consultas</option>
+                </select><br><br>
+               
+                <label for="comentario"><b>Comentario :</b></label><br>
+                <textarea class="comment" placeholder="Ingresá tu comentario"></textarea><label id="mensaje"></label>
+                <br><br>
+               
+                <input type="submit" value="Enviar">
+                <input type="reset" value="Cancelar">
+                <br>
+            </form>
+        
+        <!-- Validaciones en Java Script-->
+        
+            <script>
+        
+                function validacion()
+                {
+                    valor1 = document.getElementById("nombre").value;
+                    if( valor1 == null || valor1.length == 0)
+                    {
+                        document.getElementById('mensaje').innerHTML = " Por favor, ingresá tu nombre";
+                        elemento = document.getElementById('nombre');
+                        elemento.focus();
+                        return false;
+                    }
+        
+                    valor2 = document.getElementById("apellido").value;
+                    if( valor2 == null || valor2.length == 0)
+                    {
+                        document.getElementById('mensaje').innerHTML = " Por favor, ingresá tu apellido";
+                        elemento = document.getElementById('apellido');
+                        elemento.focus();
+                        return false;
+                    }
+        
+                    valor3 = document.getElementById("email").value;
+                    if (!(/^\w+([\.-]?\w+)*@(?:|hotmail|outlook|yahoo|live|gmail|edu)\.(?:|com|ar)+$/.test(valor3)))
+                    {
+                        document.getElementById('mensaje').innerHTML = " Ingresá/corregí tu direccion de email" ;
+                        elemento = document.getElementById('email');
+                        elemento.value = '';
+                        elemento.focus();
+                        return false;
+                    }
+                   
+                    valor4 = document.getElementById("tel").value;
+                    if( valor4 == null || valor4.length == 0)
+                    {
+                        document.getElementById('mensaje').innerHTML = " Por favor, ingresá un teléfono de contacto";
+                        elemento = document.getElementById('tel');
+                        elemento.focus();
+                        return false;
+                    }
+        
+                    indice = document.getElementById("motivo").selectedIndex;
+                    if( indice == null || indice == 0 )
+                    {
+                        document.getElementById('mensaje').innerHTML = " Por favor, seleccioná un motivo de contacto";
+                        return false;
+                    }
+        
+                    valor5 = document.getElementByClass("comment").value;
+                    if( valor5 == null || valor5.length == 0)
+                    {
+                        document.getElementByClass('mensaje').innerHTML = " Por favor, ingresá tu comentario";
+                        elemento = document.getElementByClass('comment');
+                        elemento.focus();
+                        return false;
+                    }
+                    return true;
+                }
+            </script>
+        
+        </div>          
+</body>
+</html>
